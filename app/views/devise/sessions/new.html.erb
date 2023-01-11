@@ -1,5 +1,9 @@
-<h2>Log in</h2>
-
+<div style='background-color: #E8CFC1; height: 100vh'>
+<div class="container" style='padding: 100px 0; width: 50%;'>
+<div style='text-align: center; padding-bottom: 20px'>
+<h2>Welcome back to<span style='font-weight: bold; color: #e86048;'> HeartDog!</span></h2>
+<h5> Log in to get started. </h5>
+</div>
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
     <%= f.input :email,
@@ -12,9 +16,13 @@
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+  <div class="form-actions" style='text-align: center'>
+    <%= f.button :submit, "Log in", class: 'btn btn-flat' %>
   </div>
 <% end %>
 
+ <div style='text-align: center; padding: 20px'>
 <%= render "devise/shared/links" %>
+</div>
+</div>
+</div>

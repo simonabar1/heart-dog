@@ -1,5 +1,9 @@
-<h2>Sign up</h2>
-
+<div style='background-color: #E8CFC1; height: 100vh'>
+<div class="container" style='padding: 100px 0; width: 50%;'>
+<div style='text-align: center; padding-bottom: 20px'>
+<h2>Welcome to <span style='font-weight: bold; color: #e86048;'> HeartDog!</span></h2>
+<h5> Sign up to get started. </h5>
+</div>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
@@ -17,9 +21,13 @@
                 input_html: { autocomplete: "new-password" } %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+  <div class="form-actions" style='text-align: center'>
+    <%= f.button :submit, "Sign up", class: 'btn btn-flat' %>
   </div>
 <% end %>
 
+ <div style='text-align: center; padding: 20px'>
 <%= render "devise/shared/links" %>
+</div>
+</div>
+</div>

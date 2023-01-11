@@ -1,2 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%# Homepage %>
+
+<div class="banner" style="background-image: url('https://images.pexels.com/photos/5731820/pexels-photo-5731820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+  <div class="container">
+    <h1>Find your next <strong>best friend</strong>!</h1>
+    <p>Adopt a pet and save a life with HeartDog</p>
+       <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-flat" %>
+  </div>
+</div>

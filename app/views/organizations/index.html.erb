@@ -1,23 +1,24 @@
-<div class="container" style='padding: 2rem 0;'>
-<div  style='padding: 2rem'>
-<h2 class='text-center'>Meet our <span style='font-weight: bold; color: #e86048;'> Rescuers</span> </h2>
-<h5 class='text-center'> Find out more about the heroes that saved the lives of our pups.  </h5>
-</div>
-  <div class="row row-cols-1 row-cols-md-3">
-    <% @organizations.each do |organization| %>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-          <div class="card h-100">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1522276498395-f4f68f7f8454?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9ncy1mYW1pbHl8fHx8fHwxNjczNTE5NzM5&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title text-center"> <%= organization.name %> </h5>
-              <p class="card-text text-justify"> <%= organization.description %></p>
-              <div class="text-center">
-                <%= link_to "Find Out More", organization_path(organization), class: "btn btn-flat" %>
+<div style='background-color: #E8CFC1; height: 100%'>
+  <div class="container" style='padding: 2rem 0;'>
+    <div  style='padding: 2rem'>
+    <h2 class='text-center'>Meet our <span style='font-weight: bold; color: #e86048;'> Rescuers</span> </h2>
+    <h5 class='text-center'> Find out more about the heroes that saved the lives of our pups.  </h5>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3">
+        <% @organizations.each do |organization| %>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+              <div class="card h-100">
+                <img class="card-img-top" src="https://images.unsplash.com/photo-1522276498395-f4f68f7f8454?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9ncy1mYW1pbHl8fHx8fHwxNjczNTE5NzM5&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title text-center"> <%= organization.name %> </h5>
+                  <p class="card-text text-justify"> <%= organization.description %></p>
+                  <div class="text-center">
+                    <%= link_to "Find Out More", organization_path(organization), class: "btn btn-flat" %>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-    <% end %>
+        <% end %>
+    </div>
   </div>
-
 </div>

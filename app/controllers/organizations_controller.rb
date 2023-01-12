@@ -17,6 +17,11 @@ class OrganizationsController < ApplicationController
     redirect_to organization_path(@organization)
   end
 
+  def show
+    @organization = Organization.find(params[:id])
+    @owner = @organization.user
+  end
+
   private
 
   def organizations_params

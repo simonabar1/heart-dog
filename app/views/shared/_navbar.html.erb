@@ -24,14 +24,19 @@
             <%= link_to "Organizations", organizations_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Notifications", "#", class: "nav-link" %>
+            <%= link_to 'Notifications', '#', class: "nav-link" %>
           </li>
+
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
               <%= link_to "My Pets", "#", class: "dropdown-item" %>
-              <%= link_to "My Organization", "#", class: "dropdown-item" %>
+              <% if current_user.organization != nil %>
+              <%= link_to "My Organization", organization_path(current_user.organization), class: "dropdown-item" %>
+              <% else %>
+              <%= link_to "My Organization", new_organization_path, class: "dropdown-item" %>
+              <% end %>
               <%= link_to "Log out",  destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>

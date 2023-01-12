@@ -1,1 +1,89 @@
-Hello show organization
+<div style='background-color: #E8CFC1; height: 100%'>
+<div class="container">
+
+<section class="h-100 gradient-custom-2">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-7">
+        <div class="card">
+          <div class="rounded-top text-white d-flex flex-row" style="background-size: cover; background-image: url('https://images.unsplash.com/photo-1542715234-4bafcfc68bd9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'); background-position: center; height:200px;">
+            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+              <img src="https://cdn.pixabay.com/photo/2018/03/30/02/30/color-dogs-3274248_1280.png"
+                alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                style="width: 150px; z-index: 1;">
+                <% if current_user == @organization.user %>
+                <%= link_to "Edit Profile", edit_organization_path(@organization), class: "btn btn-flat", style: "z-index: 1;" %>
+                <% end %>
+
+            </div>
+            <div class="ms-3" style="margin-top: 130px;">
+              <h5 style='color: white; font-weight: bold;';><%= @organization.name%></h5>
+              <p> <%= @organization.address%>, <%= @organization.city%> </p>
+            </div>
+          </div>
+          <div class="p-4 text-black" style="background-color: #f8f9fa;">
+            <div class="d-flex justify-content-end text-center py-1">
+              <div>
+                <p class="mb-1 h5">300</p>
+                <p class="small text-muted mb-0">Dogs</p>
+              </div>
+              <div class="px-3">
+                <p class="mb-1 h5">109</p>
+                <p class="small text-muted mb-0">Adoptions</p>
+              </div>
+              <div>
+                <p class="mb-1 h5">4</p>
+                <p class="small text-muted mb-0">Donations</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-body p-4 text-black">
+            <div class="mb-5">
+              <p class="lead fw-normal mb-1">About</p>
+              <div class="p-4" style="background-color: #f8f9fa;">
+                <p class="font-italic mb-1">DLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </div>
+            <div class="mb-5">
+              <p class="lead fw-normal mb-1">Get in Touch</p>
+              <div class="p-4">
+              <ul class="list-group w-100 mx-auto">
+                <div class="list-group-item">
+                <span class="d-inline-flex align-items-center justify-content-center text-white rounded m-1 me-2" style="background-color: #0082ca; width: 40px; height: 40px;">
+                  <i class="fab fa-whatsapp fa-lg"></i>
+                </span>
+                +31 000 00 00
+              </div>
+              <div class="list-group-item">
+                <div class="d-inline-flex align-items-center justify-content-center text-white rounded m-1 me-2" style="background-color: #ff4500; width: 40px; height: 40px;">
+                  <i class="fas fa-envelope fa-lg"></i>
+                </div>
+                info@puppyrescue.org
+              </div>
+              <div class="list-group-item">
+                <div class="d-inline-flex align-items-center justify-content-center text-white rounded m-1 me-2" style="background-color: #00b386; width: 40px; height: 40px;">
+                  <i class="fas fa-laptop fa-lg"></i>
+                </div>
+                www.puppyrescue.org
+              </div>
+            </ul>
+
+              </div>
+            </div>
+            <div class="mb-5">
+              <p class="lead fw-normal mb-1">Available Dogs</p>
+              </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+</div>
+</div>

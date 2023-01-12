@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_12_162246) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_12_165215) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_12_162246) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "adopted", default: false
+    t.boolean "gender"
     t.index ["organization_id"], name: "index_dogs_on_organization_id"
   end
 

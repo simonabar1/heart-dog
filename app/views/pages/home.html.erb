@@ -3,18 +3,18 @@
 <%# Banner %>
 
 
-<div class="banner" style="background-image: url('https://images.pexels.com/photos/5731820/pexels-photo-5731820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
-  <div class="container">
+<section class="banner" style="background-image: url('https://images.pexels.com/photos/5731820/pexels-photo-5731820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+  <div class="container" style='position: absolute; top: 40%; left: 5%;';>
     <h1>Not all <strong>soulmates</strong> are human</h1>
     <p>Adopt a pet and save a life with HeartDog!</p>
        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-flat" %>
   </div>
-</div>
+</section>
 
   <%# Bullet points %>
 
 
- <div class="container row row-cols-1 row-cols-md-4 text-center justify-content-center pt-4" style='margin: 6% auto;'>
+ <section class="container row row-cols-1 row-cols-md-4 text-center justify-content-center pt-4" style='margin: 6% auto;'>
             <div class="col-lg-4 col-md-12 mt-3 mb-3">
 
               <i class="fas fa-check-circle home-icon" style='border: padding: 1rem; margin: 1rem; font-size: 2.5rem';></i>
@@ -38,7 +38,7 @@
               <p style='color: #5A5A5A'>Donate to support local animal organizations. 100% of your donation will be sent to your organization of choice. </p>
 
             </div>
-  </div>
+  </section>
 
   <%# Testimonial section %>
 
@@ -74,5 +74,72 @@
 </div>
 
 
+</section>
 
+  <%# Pricing %>
+
+<section class='container' style='margin: 6% auto;'>
+
+<div class="text-center m-4">
+<h2 style='font-weight:bold'> Membership Plans</h2>
+<p> Sign up for free or choose a membership plan to provide regular support to our organizations. </p>
+</div>
+
+  <div class="row row-cols-1 row-cols-md-4 text-center justify-content-center pt-4">
+
+      <div class="col-lg-4 col-md-6  mb-3">
+      <div class="card" style='border: 1px solid rgb(237, 114, 92, 0.4);'>
+        <div class="card-text">
+          <h5 class="card-title" style='background-color: rgb(237, 114, 92, 0.7); color: white; padding: 0.5rem'> Regular Access</h5>
+          <h2 class='p-1'>Free </h2>
+          <ul style='color: darkgrey; line-height: 2rem'>
+            <li style='list-style:none'>Unlimited Matches</li>
+              <li style='list-style:none'>Unlimited Messages</li>
+           <li style='list-style: none'> Possibility to Donate</li>
+           <li style='list-style: none'> No Priority</li>
+          </ul>
+           <div class="text-center pb-4">
+                    <%= link_to "Sign Up for Free", new_user_registration_path, class: "btn btn-flat btn-block" %>
+                  </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="col-lg-4 col-md-6 mb-3">
+      <div class="card" style='border: 1px solid rgb(237, 114, 92, 0.4);'>
+        <div class="card-text">
+            <h5 class="card-title" style='background-color: rgb(237, 114, 92, 0.7); color: white; padding: 0.5rem'> Supporter Membership</h5>
+            <h2 class='p-1'>10€ <span style='color: #808080'>/ mo</span></h2>
+            <ul style='color: darkgrey; line-height: 2rem'>
+              <li style='list-style:none'>Unlimited Matches</li>
+              <li style='list-style:none'>Unlimited Messages</li>
+              <li style='list-style: none'> Regular donations</li>
+              <li style='list-style: none'> Priority Plus</li>
+            </ul>
+            <div class="text-center pb-4">
+                      <%= link_to "Get in Touch", '#', class: "btn btn-flat btn-block" %>
+            </div>
+       </div>
+      </div>
+    </div>
+
+      <div class="col-lg-4 col-md-12 mb-3">
+      <div class="card" style='border: 1px solid rgb(237, 114, 92, 0.4);'>
+        <div class="card-text">
+            <h5 class="card-title" style='background-color: rgb(237, 114, 92, 0.7); color: white; padding: 0.5rem'> Animal Lover Membership</h5>
+            <h2 class='p-1'>20€ <span style='color: #808080'>/ mo</span></h2>
+            <ul style='color: darkgrey; line-height: 2rem'>
+              <li style='list-style:none'>Unlimited Matches</li>
+              <li style='list-style:none'>Unlimited Messages</li>
+              <li style='list-style:none'>Unlimited App Usage</li>
+              <li style='list-style: none'> Premium Priority </li>
+            </ul>
+            <div class="text-center pb-4">
+                      <%= link_to "Get in Touch", '#', class: "btn btn-flat btn-block" %>
+            </div>
+       </div>
+      </div>
+    </div>
+
+</div>
 </section>

@@ -1,9 +1,43 @@
 <%# Homepage %>
 
+<%# Banner %>
+
+
 <div class="banner" style="background-image: url('https://images.pexels.com/photos/5731820/pexels-photo-5731820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
   <div class="container">
     <h1>Not all <strong>soulmates</strong> are human</h1>
     <p>Adopt a pet and save a life with HeartDog!</p>
        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-flat" %>
   </div>
+</div>
+
+<%# Bullet points %>
+
+
+ <div class="container row row-cols-1 row-cols-md-4 text-center justify-content-center pt-4" style='margin: auto'>
+            <div class="col-lg-4 col-md-12 mt-3 mb-3">
+
+              <i class="fas fa-check-circle home-icon" style='border: padding: 1rem; margin: 1rem; font-size: 2.5rem';></i>
+              <p style='font-weight:bold;'>HeartDog for Owners</p>
+              <p style='color: #5A5A5A'>Sign up and find the dog of your dreams for free. Get direct contact with rescuers and bring your puppy home!</p>
+
+            </div>
+
+            <div class="col-lg-4 col-md-12 mt-3 mb-3">
+
+              <i class="fas fa-bullseye home-icon" style='border: padding: 1rem; margin: 1rem; font-size: 2.5rem';></i>
+              <p style='font-weight:bold'>HeartDog for Organizations</p>
+              <p style='color: #5A5A5A'>Register your organization and publish your dogs for free. Give your pups the visibility they deserve and find new adopters. </p>
+
+            </div>
+
+             <div class="col-lg-4 col-md-12 mt-3 mb-3">
+
+              <i class="fas fa-heart home-icon" style='border: padding: 1rem;margin: 1rem; font-size: 2.5rem';></i>
+              <p style='font-weight:bold'>HeartDog for the Pets</p>
+              <p style='color: #5A5A5A'>Donate to support local animal organizations. 100% of your donation will be sent to your organization of choice. </p>
+
+            </div>
+  </div>
+
 </div>

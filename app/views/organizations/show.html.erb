@@ -82,7 +82,7 @@
                   <p class="card-text text-justify"> <%= dog.description %></p>
                   <div class="text-center">
                      <% if current_user == @organization.user %>
-                    <%= link_to "Edit", dog_path(dog), class: "btn btn-flat" %>
+                    <%= link_to "Edit", edit_dog_path(dog), class: "btn btn-flat" %>
                     <% else %>
                    <%= link_to "Find Out More", dog_path(dog), class: "btn btn-flat" %>
                    <% end %>

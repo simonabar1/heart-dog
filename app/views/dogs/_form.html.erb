@@ -3,7 +3,8 @@
   <%= f.input :gender, as: :select, collection: [['Female',true], ['Male',false]], required: true %>
   <%= f.input :description %>
   <%= f.input :adopted, as: :select, collection: [['Yes',true], ['No',false]], required: true %>
-
+  <%= f.input :vaccinated, :label => "Vaccination Status", as: :select, collection: [['Vaccinated', 'Vaccinated'], ['Not Vaccinated', 'Not Vaccinated'],  ['Partially Vaccinated', 'Partially Vaccinated']] %>
+  <%= f.input :neutered, :label => "Neutered?", as: :select, collection: [['Yes',true], ['No',false]], required: true %>
    <div class="form-actions" style='text-align: center'>
     <%= f.button :submit, "Submit", class: 'btn btn-flat' %>
   </div>

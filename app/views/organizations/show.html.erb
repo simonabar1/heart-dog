@@ -13,6 +13,8 @@
                 style="width: 150px; z-index: 1;">
                 <% if current_user == @organization.user %>
                 <%= link_to "Edit Profile", edit_organization_path(@organization), class: "btn btn-flat", style: "z-index: 1;" %>
+                <% else %>
+               <%= link_to "Donate", '#', class: "btn btn-flat", style: "z-index: 1;" %>
                 <% end %>
 
             </div>
@@ -28,7 +30,7 @@
                 <p class="small text-muted mb-0">Dogs</p>
               </div>
               <div class="px-3">
-                <p class="mb-1 h5">109</p>
+                <p class="mb-1 h5"><%= @organization.dogs.where(adopted: "true").count %></p>
                 <p class="small text-muted mb-0">Adoptions</p>
               </div>
               <div>
@@ -88,11 +90,17 @@
                    <% end %>
 
                   </div>
+
+
                 </div>
               </div>
             </div>
         <% end %>
     </div>
+
+          <div class='text-center m-4'>
+             <%= link_to 'Back', :back , class: "btn btn-flat" %>
+           </div>
               </div>
 
 

@@ -8,6 +8,7 @@ class OrganizationsController < ApplicationController
   def show
     @organization = Organization.find(params[:id])
     @owner = @organization.user
+
   end
 
   def new

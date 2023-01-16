@@ -23,6 +23,19 @@
        <%= f.input :habitation,
                 :label => "Currently Living In:",
                 as: :select, collection: [['House with Garden', 'House with Garden'], ['House without Garden', 'House without Garden'], ['Apartment', 'Apartment'],  ['Shared Apartment', 'Shared Apartment'], ['Room', 'Room']] %>
+        <%= f.input :marital_status,
+                :label => "Marital Status",
+                as: :select, collection: [['Married', 'Married'], ['Living Together', 'Living Together'], ['Widow', 'Widow'],  ['Single', 'Single']] %>
+       <%= f.input :children,
+        :label => "Children Under 10",
+                required: true %>
+        <%= f.input :pets,
+                :label => "How many pets do you have at home?",
+                required: true %>
+    <%= f.input :birthday,
+                as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 10,
+                :order => [:day, :month, :year]  %>
       <%= f.input :photo, as: :file %>
 
     <%= f.input :email, required: true, autofocus: true %>

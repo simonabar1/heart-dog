@@ -5,7 +5,9 @@
     <h5 class='text-center'> Find out more about the heroes that saved the lives of our pups.  </h5>
     </div>
 
+
 <!-- Search -->
+
 
 <div class="row">
    <div class="col-lg-3 col-md-3 col-sm-3 text-center">
@@ -13,11 +15,11 @@
 
     <div class="col-lg-6 col-md-6 col-sm-6 mb-3 text-center">
       <%= form_with url: organizations_path, method: :get, class: "d-flex input-group rounded" do %>
+
         <%= text_field_tag :query,
           params[:query],
           class: "form-control rounded",
-          placeholder: "Enter a name..."
-        %>
+          placeholder: "Enter a name..." %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
@@ -25,12 +27,9 @@
      <div class="col-lg-3 col-md-3 col-sm-3 mb-3 text-center">
    </div>
 
-    </div>
-
 
 <!-- [...] -->
 
-    <div class="row row-cols-1 row-cols-md-3">
         <% @organizations.each do |organization| %>
             <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
               <div class="card h-100">

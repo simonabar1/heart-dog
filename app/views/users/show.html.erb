@@ -27,16 +27,29 @@
           <div class="p-4 text-black" style="background-color: #f8f9fa;">
             <div class="d-flex justify-content-end text-center py-1">
               <div>
-                <p class="mb-1 h5">25</p>
+                <p class="mb-1 h5"> <%= Date.today.year - @user.birthday.year  %> </p>
                 <p class="small text-muted mb-0">Years Old</p>
               </div>
+
               <div class="px-3">
-                <p class="mb-1 h5">2</p>
-                <p class="small text-muted mb-0">Children</p>
+                <p class="mb-1 h5"><%=@user.children  %></p>
+                <p class="small text-muted mb-0">
+                 <% if @user.children == 1 %>
+                 Child
+                <% else %>
+                 Children
+                <% end %>
+                </p>
               </div>
               <div>
-                <p class="mb-1 h5">0</p>
-                <p class="small text-muted mb-0">Pets</p>
+                 <p class="mb-1 h5"><%=@user.pets  %></p>
+                <p class="small text-muted mb-0">
+                 <% if @user.pets == 1 %>
+                 Pet
+                <% else %>
+                 Pets
+                <% end %>
+                </p>
               </div>
             </div>
           </div>
@@ -55,13 +68,19 @@
                 <span class="d-inline-flex align-items-center justify-content-center text-white rounded m-1 me-2" style="background-color: #0082ca; width: 40px; height: 40px;">
                   <i class="fas fa-child fa-lg"></i>
                 </span>
-                Two children aged 10 and 8
+                <% if @user.children == 1 %>
+                 Has One Child Under 10
+                <% elsif @user.children != 0 %>
+                Has Children Under 10
+                <% else %>
+                No Children Under 10
+                <% end %>
               </div>
               <div class="list-group-item">
                 <div class="d-inline-flex align-items-center justify-content-center text-white rounded m-1 me-2" style="background-color: #ff4500; width: 40px; height: 40px;">
                   <i class="fas fa-heart fa-lg"></i>
                 </div>
-                Married
+                <%= @user.marital_status %>
               </div>
               <div class="list-group-item">
                 <div class="d-inline-flex align-items-center justify-content-center text-white rounded m-1 me-2" style="background-color: #00b386; width: 40px; height: 40px;">
@@ -73,7 +92,13 @@
                 <div class="d-inline-flex align-items-center justify-content-center text-white rounded m-1 me-2" style="background-color: pink; width: 40px; height: 40px;">
                   <i class="fas fa-paw fa-lg"></i>
                 </div>
+                 <% if @user.pets == 1 %>
+                 One Pet at Home
+                <% elsif @user.pets != 0 %>
+                <%= @user.pets%> Pets at Home
+                <% else %>
                 No pets in the house (yet!)
+                <% end %>
               </div>
             </ul>
 

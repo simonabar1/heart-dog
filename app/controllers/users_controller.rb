@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  require 'date'
+
   def show
       @user = User.find(params[:id])
   end
@@ -12,6 +14,7 @@ class UsersController < ApplicationController
     @user.update(user_params)
     redirect_to user_path(@user)
   end
+
 
   private
 

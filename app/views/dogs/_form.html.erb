@@ -1,6 +1,8 @@
 <%= simple_form_for(@dog) do |f| %>
   <%= f.input :name %>
   <%= f.input :gender, as: :select, collection: [['Female',true], ['Male',false]], required: true %>
+  <%= f.input :birthday, :order => [:day, :month, :year] %>
+  <%= f.input :estimated, :label => "Is the birthday an estimate?", as: :boolean %>
   <%= f.input :description %>
   <%= f.input :adopted, as: :select, collection: [['Yes',true], ['No',false]], required: true %>
   <%= f.input :vaccinated, :label => "Vaccination Status", as: :select, collection: [['Vaccinated', 'Vaccinated'], ['Not Vaccinated', 'Not Vaccinated'],  ['Partially Vaccinated', 'Partially Vaccinated']] %>

@@ -55,7 +55,10 @@
                 <div class="d-inline-flex align-items-center justify-content-center text-white rounded m-1 me-2" style="background-color: #ff4500; width: 40px; height: 40px;">
                   <i class="fas fa-heart fa-lg"></i>
                 </div>
-                Born on 16.05.22
+                Born on <%= @dog.birthday.strftime("%A, %d %B %Y") %>
+                <% if @dog.estimated == true %>
+                (estimated)
+                <% end %>
               </div>
               <div class="list-group-item">
                 <div class="d-inline-flex align-items-center justify-content-center text-white rounded m-1 me-2" style="background-color: #00b386; width: 40px; height: 40px;">
@@ -82,16 +85,14 @@
             <div class="mb-5">
               <p class="lead fw-normal mb-1">About <%= @dog.organization.name  %></p>
               <div class="p-4" style="background-color: #f8f9fa;">
-                <p class="font-italic mb-1">DLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p class="font-italic mb-1"><%= @dog.organization.description  %></p>
               </div>
               <div class="text-center" style='padding-top: 2em';>
-                            <%= link_to "Get in Touch", '#', class: "btn btn-flat", style: "z-index: 1;" %>
+                            <%= link_to "Get in Touch", '#', class: "btn btn-flat", style: "z-index: 1;" %> <%= link_to 'Go Back', :back , class: "btn btn-flat" %>
               </div>
             </div>
 
-            <div class='text-center m-4'>
-             <%= link_to 'Back', :back , class: "btn btn-flat" %>
-           </div>
+
 
           </div>
         </div>

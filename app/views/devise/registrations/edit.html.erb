@@ -20,7 +20,11 @@
                   required: true %>
       <%= f.input :description,
                 required: true %>
+       <%= f.input :habitation,
+                :label => "Currently Living In:",
+                as: :select, collection: [['House with Garden', 'House with Garden'], ['House without Garden', 'House without Garden'], ['Apartment', 'Apartment'],  ['Shared Apartment', 'Shared Apartment'], ['Room', 'Room']] %>
       <%= f.input :photo, as: :file %>
+
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

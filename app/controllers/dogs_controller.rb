@@ -1,7 +1,11 @@
 class DogsController < ApplicationController
 
     def index
-      @dogs = Dog.all
+      if params[:query].present?
+        @dogs = Dog.where("name ILIKE ?", "%#{params[:query]}%")
+      else
+        @dogs = Dog.all
+      end
     end
 
     def show

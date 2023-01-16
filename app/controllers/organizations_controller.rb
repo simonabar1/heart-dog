@@ -2,7 +2,12 @@ class OrganizationsController < ApplicationController
 
 
   def index
-    @organizations = Organization.all
+    if params[:query].present?
+        sql_query = "name ILIKE :query OR city ILIKE :query"
+        @organizations = Organization.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @organizations = Organization.all
+    end
   end
 
   def show

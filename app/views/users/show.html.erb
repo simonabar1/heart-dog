@@ -13,11 +13,15 @@
             <% else %>
               <%= image_tag 'missing-image.png', class: 'mg-fluid img-thumbnail mt-4 mb-2', style: 'width: 150px; z-index: 1;' %>
             <% end %>
+
                 <% if @user == current_user %>
                 <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-flat", style: "z-index: 1;" %>
                 <% else %>
                <%= link_to "Message", '#', class: "btn btn-flat", style: "z-index: 1;" %>
                 <% end  %>
+
+
+
             </div>
             <div class="ms-3" style="margin-top: 130px;">
               <h5 style='color: white; font-weight: bold;';><%= @user.first_name%> <%=@user.last_name %></h5>
@@ -103,9 +107,60 @@
             </ul>
 
               </div>
+
+              <div class="mb-5">
+              <p class="lead fw-normal mb-1">Organizations</p>
+               <div class="p-4">
+              <ul class="list-group w-100 mx-auto">
+                <div class="list-group-item">
+
+                <% if @user.organization != nil && @current_user != @user %>
+                <div class='p-2'>
+                 <p><%= @user.first_name %> belongs to <strong><%= @user.organization.name %></strong>, an animal rescue organization based in <%= @user.organization.city %>. </p>
+                 <p> <%= @user.organization.name %> currently has <%= @user.organization.dogs.count %> dogs available for adoption. </p>
+                   <div class="text-center">
+                      <%= link_to "About the Organization", organization_path(@user.organization), class: "btn btn-flat", style: 'background-color: #00b386;' %>
+                    </div>
+                  </div>
+
+                <% elsif @user.organization != nil && current_user == @user %>
+                <div class='p-2'>
+                  <p> You belong to <strong><%= @user.organization.name %></strong>, an animal rescue organization based in <%= @user.organization.city %>. </p>
+                  <p><%= @user.organization.name %> currently has <%= @user.organization.dogs.count %> dogs available for adoption. </p>
+                  <div class="text-center">
+                      <%= link_to "Check Out Organization", organization_path(@user.organization), class: "btn btn-flat", style: 'background-color: #00b386;' %>
+                  </div>
+                </div>
+
+                  <% elsif @user.organization == nil && current_user == @user %>
+                  <div class='p-2'>
+                    <p>You currently do not belong to any organization. </p>
+                    <p>Are you a rescuer? Add your organization to advertise your pups for free!</p>
+                    <div class="text-center">
+                    <%= link_to "Add an Organization +", new_organization_path, class: "btn btn-flat m-1", style: 'background-color: #00b386;' %>
+                    <%= link_to "Discover our Organizations ", organizations_path, class: "btn btn-flat m-1"  %>
+                    </div>
+                  </div>
+
+                  <% else  %>
+                  <div class='p-2'>
+                    <p><% @user.first_name %> currently does not belong to any organization. </p>
+                    <div class="text-center">
+                    <%= link_to "Discover our Organizations ", organizations_path, class: "btn btn-flat m-1" , style: 'background-color: #00b386;' %>
+                    </div>
+                  </div>
+
+                <% end %>
+              </div>
+
+              </div>
+
+
                    <div class="text-center" style='padding-top: 2em';>
                            <%= link_to 'Go Back', :back , class: "btn btn-flat" %>
               </div>
+            </div>
+
             </div>
 
 

@@ -15,7 +15,12 @@
               <%= image_tag 'missing-image.png', class: 'mg-fluid img-thumbnail mt-4 mb-2', style: 'width: 150px; z-index: 1;' %>
             <% end %>
 
+                <% if current_user.organization == @dog.organization %>
                 <%= link_to "Edit Profile", edit_dog_path(@dog), class: "btn btn-flat", style: "z-index: 1;" %>
+                <% else %>
+                 <%= link_to "Contact", '#', class: "btn btn-flat", style: "z-index: 1;" %>
+                 <% end %>
+
 
             </div>
             <div class="ms-3" style="margin-top: 130px;">

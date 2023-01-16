@@ -20,6 +20,7 @@
                   required: true %>
       <%= f.input :description,
                 required: true %>
+      <%= f.input :photo, as: :file %>
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

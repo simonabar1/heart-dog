@@ -8,7 +8,11 @@
         <% @organizations.each do |organization| %>
             <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
               <div class="card h-100">
-                <img class="card-img-top" src="https://images.unsplash.com/photo-1522276498395-f4f68f7f8454?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9ncy1mYW1pbHl8fHx8fHwxNjczNTE5NzM5&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" alt="Card image cap">
+               <% if organization.photo.attached? %>
+                <%= cl_image_tag organization.photo.key, crop: :fill, class: "card-img-top" %>
+                <% else %>
+                <%= image_tag 'missing-image.png', class: 'card-img-top' %>
+                <% end %>
                 <div class="card-body">
                   <h5 class="card-title text-center"> <%= organization.name %> </h5>
                   <p class="card-text text-justify"> <%= organization.description %></p>

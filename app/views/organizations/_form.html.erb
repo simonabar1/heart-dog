@@ -3,7 +3,9 @@
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.input :city %>
-
+  <%= f.input :whatsapp, :label => "Whatsapp Number"  %>
+  <%= f.input :email, :label => "Email Address", pattern: "[a-zA-Z]+" %>
+  <%= f.input :website %>
   <%= f.input :description %>
   <%= f.input :photo, as: :file %>
 

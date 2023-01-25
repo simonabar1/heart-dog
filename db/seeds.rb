@@ -62,6 +62,9 @@ organization_one = Organization.new(
   name: 'Puppy Rescue Team',
   address: 'Webster By-Pass',
   city: 'Amsterdam',
+  website: "www.puppyrescue.com",
+  whatsapp: '010 010 020',
+  email: "info@puppyrescue.com",
   description: 'Puppy Rescue Team  was founded in 2020 by Jules and Ramon, two animal lovers who always had a desire to help homeless animals. The initiative quickly grew to a group of more than 20 people working voluntarily in re-homing rescues from Lithuania to The Netherlands, Belgium and some other countries. ',
   user_id: 1
 )
@@ -72,6 +75,9 @@ organization_two = Organization.new(
   name: 'Spains Strays',
   address: 'Arley Approach',
   city: 'Barcelona',
+  website: "www.spainstrays.com",
+  whatsapp: '010 010 020',
+  email: "info@spainstrays.com",
   description: 'The goal of this website is to tell you more about dogs and cats in need and to facilitate their adoption and rehoming to European countries. If you are looking to adopt, you will have to fill out the application form, your answers are an important part of helping us to be sure that the pet is a good match for you, your family and your lifestyle. We will provide you with all the information about the pet, his or her life story, character, behavior and other things you need to know.',
   user_id: 2
 )
@@ -82,6 +88,9 @@ organization_three = Organization.new(
   name: 'Annas Rescues',
   address: 'Wyton Grove',
   city: 'London',
+  website: "www.annasrescues.com",
+  whatsapp: '010 010 020',
+  email: "info@annasrescues.com",
   description: 'Anna Rescues is run entirely through volunteer work. Based in London, we work in collaboration with several animal shelters in Portugal, Greece and Italy, helping to adopt and rehome rescue dogs and cats to the UK and allowing them to experience the love, kindness and safety that they deserve. ',
   user_id: 3
 )

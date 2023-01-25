@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   resources :organizations
   resources :dogs
+  resources :matches, only: [:index, :show, :new]
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

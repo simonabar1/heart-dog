@@ -34,6 +34,8 @@ user_two = User.new(
   password: '123123'
 )
 
+user_two.save!
+
 user_three = User.new(
   first_name: 'Aleksey',
   last_name: 'Heimisson',

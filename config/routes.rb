@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :dogs
   resources :matches, only: [:index, :show, :new]
 
+  put "/dog/:id/like", to: "dogs#like", as: "like"
+
+
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

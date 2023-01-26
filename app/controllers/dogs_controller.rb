@@ -41,6 +41,12 @@ class DogsController < ApplicationController
       redirect_to dogs_path, status: :see_other
     end
 
+    def like
+      @dog = Dog.find(params[:id])
+      Like.create(user_id: current_user.id, dog_id: @dog.id)
+      redirect_to dog_path(@dog)
+    end
+
 
     private
 

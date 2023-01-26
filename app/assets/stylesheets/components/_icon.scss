@@ -1,0 +1,13 @@
+.liked {
+  color: red;
+  border: 2px solid red;
+}
+
+.liked, .not-liked:hover {
+  cursor: pointer;
+}
+
+.not-liked {
+  color: gray;
+  border: 2px solid gray;
+}

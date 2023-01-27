@@ -147,7 +147,7 @@ puts "Creating 6 fake pets..."
 dog_one = Dog.new(
   name: 'Richie',
   gender: 'false',
-  birthday: "12/12/22",
+  birthday: "12/12/2022",
   neutered: true,
   vaccinated: 'Not Vaccinated',
   description: 'Richie is about 8 years and weight 10kg. He has lived all his life on a chain and he has an old leg trauma that we cannot do anything about. But Richie Rich is resilient and full of life. He is definitely enjoying his new chapter of his life. Now he just needs to find his best friend to share all of his enthusiasm with. Richie is a happy boy, always on the run, investigating everything, meeting everyone. This means he is a bit impatient on the leash, so do not be surprised if is he is faster than you think. He is Dog and cat friendly, kids would be ok if they understand that a dog is not a toy and if they would respect his space.',
@@ -184,7 +184,7 @@ dog_three.save!
 dog_four = Dog.new(
   name: 'Django',
   gender: 'false',
-  birthday: "18/02/19",
+  birthday: "18/02/2019",
   neutered: true,
   vaccinated: 'Vaccinated',
   description: 'Django has lived all his life on a chain and he has an old leg trauma that we cannot do anything about. But Richie Rich is resilient and full of life. He is definitely enjoying his new chapter of his life. Now he just needs to find his best friend to share all of his enthusiasm with. Richie is a happy boy, always on the run, investigating everything, meeting everyone. This means he is a bit impatient on the leash, so do not be surprised if is he is faster than you think. He is Dog and cat friendly, kids would be ok if they understand that a dog is not a toy and if they would respect his space.',

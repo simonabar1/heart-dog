@@ -1,55 +1,104 @@
 <div style='background-color: #E8CFC1; height: 100%'>
-  <div class="container" style='padding: 2rem 0;'>
-    <div  style='padding: 2rem'>
-    <h2 class='text-center'>Meet our <span style='font-weight: bold; color: #e86048;'> Dogs </span> </h2>
-    <h5 class='text-center'> Find out more about puppies looking for a home.  </h5>
-    </div>
+    <div class="container" style='padding: 2rem 0;'>
+        <div  style='padding: 2rem'>
+            <h2 class='text-center'>Meet our <span style='font-weight: bold; color: #e86048;'> Dogs </span> </h2>
+            <h5 class='text-center'> Find out more about puppies looking for a home.  </h5>
+        </div>
 
     <!-- Search Form -->
-    <div class="row">
+        <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 mb-3 text-center">
+              </div>
 
-   <div class="col-lg-3 col-md-3 col-sm-3 mb-3 text-center">
-   </div>
-
-    <div class="col-lg-6 col-md-6 col-sm-6 mb-3 text-center">
-      <%= form_with url: dogs_path, method: :get, class: "d-flex input-group rounded" do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control rounded",
-          placeholder: "Enter a name..."
-        %>
-
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-
-     <div class="col-lg-3 col-md-3 col-sm-3 mb-3 text-center">
-   </div>
-
-    </div>
-
-
-<!-- [...] -->
-
-    <div class="row row-cols-1 row-cols-md-3">
-        <% @dogs.each do |dog| %>
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-              <div class="card h-100">
-                <% if dog.photo.attached? %>
-                <%= cl_image_tag dog.photo.key, crop: :fill, class: "card-img-top" %>
-                <% else %>
-                <%= image_tag 'missing-image.png', class: 'card-img-top' %>
+          <div class="col-lg-6 col-md-6 col-sm-6 mb-3 text-center">
+                <%= form_with url: dogs_path, method: :get, class: "d-flex input-group rounded" do %>
+                  <%= text_field_tag :query,
+                      params[:query],
+                      class: "form-control rounded",
+                      placeholder: "Enter a name..."
+                    %>
+                    <%= submit_tag "Search", class: "btn btn-primary" %>
                 <% end %>
-                <div class="card-body">
-                  <h5 class="card-title text-center"> <%= dog.name %> </h5>
-                  <p class="card-text text-justify"> <%= dog.description %></p>
-                  <div class="text-center">
-                    <%= link_to "Find Out More", dog_path(dog), class: "btn btn-flat" %>
+            </div>
+
+          <div class="col-lg-3 col-md-3 col-sm-3 mb-3 text-center">
+          </div>
+
+        </div>
+
+
+    <!-- Flip Cards -->
+
+
+        <div class="row row-cols-1 row-cols-md-3">
+            <% @dogs.each do |dog| %>
+                <div class=".col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-3 card-container">
+
+                    <div class="card-flip card h-100">
+
+                        <!-- Card  Front -->
+                        <div class="card front ">
+                            <% if dog.photo.attached? %>
+                                  <%= cl_image_tag dog.photo.key, crop: :fill, class: "card-img-top img-fluid" %>
+                                <% else %>
+                                  <%= image_tag 'missing-image.png', class: 'card-img-top' %>
+                            <% end %>
+
+                            <div class="card-body card-block p-3 m-2 ">
+                              <h5 class="card-title text-center"> <%= dog.name %> </h5>
+                            </div>
+                        </div>
+
+                        <!-- End Card Front -->
+
+                        <!-- Card  Back -->
+                        <div class="card back" >
+                            <div class='align-middle' style='margin: auto 0'>
+                                <h5 class="card-title text-center" > Meet <span style='color: rgb(232, 96, 72); font-weight: bold;'> <%= dog.name.capitalize%></span>! </h5>
+
+                                    <div class="p-2">
+                                        <ul class="list-group w-100 mx-auto">
+                                            <div class="list-group-item">
+                                                <span class="d-inline-flex align-items-center justify-content-center text-white rounded m-1 me-2" style="background-color: #0082ca; width: 40px; height: 40px;">
+                                                  <i class="fas fa-child fa-lg"></i>
+                                                </span>
+                                                <% if dog.gender == true %>
+                                                Female
+                                                <% elsif dog.gender == false %>
+                                                Male
+                                                <% end %>
+                                            </div>
+
+                                            <div class="list-group-item">
+                                                <div class="d-inline-flex align-items-center justify-content-center text-white rounded m-1 me-2" style="background-color: #ff4500; width: 40px; height: 40px;">
+                                                <i class="fas fa-heart fa-lg"></i>
+                                                </div>
+                                              Born in <%= dog.birthday.strftime("%Y") %>
+                                            </div>
+
+                                            <div class="list-group-item">
+                                              <div class="d-inline-flex align-items-center justify-content-center text-white rounded m-1 me-2" style="background-color: #00b386; width: 40px; height: 40px;">
+                                                <i class="fas fa-home fa-lg"></i>
+                                              </div>
+                                              <%= dog.organization.city %>
+                                            </div>
+                                        </ul>
+                                    </div>
+
+                                    <p class="card-title text-center m-1"> Interested? </p>
+                                        <div class="text-center">
+                                            <%= link_to "Find Out More", dog_path(dog), class: "btn btn-flat" %>
+                                        </div>
+                            </div>
+                        </div>
+
+                        <!-- End Card Back -->
                   </div>
                 </div>
-              </div>
-            </div>
-        <% end %>
-    </div>
+              <% end %>
+          </div>
+
+        <!-- End Card -->
+
   </div>
 </div>

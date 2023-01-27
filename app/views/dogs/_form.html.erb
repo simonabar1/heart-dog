@@ -4,6 +4,10 @@
   <%= f.input :birthday, :order => [:day, :month, :year], required: true %>
   <%= f.input :estimated, :label => "Is the birthday an estimate?", as: :boolean, required: true%>
   <%= f.input :description, required: true %>
+  <%= f.input :personality, as: :select, collection: [['Sweet', 'Sweet'],
+              ['Good with Children', 'Good with Children'],  ['Playful', 'Playful'], ['High Energy', 'High Energy'],
+              ['Foodie', 'Foodie'],  ['Good with Pets', 'Good with Pets'], ['Sweet', 'Sweet'],
+              ['Curious', 'Curious'],  ['Shy', 'Shy']], required: true %>
   <%= f.input :adopted, as: :select, collection: [['Yes',true], ['No',false]], required: true %>
   <%= f.input :vaccinated, :label => "Vaccination Status", as: :select, collection: [['Vaccinated', 'Vaccinated'], ['Not Vaccinated', 'Not Vaccinated'],  ['Partially Vaccinated', 'Partially Vaccinated']], required: true %>
   <%= f.input :neutered, :label => "Neutered?", as: :select, collection: [['Yes',true], ['No',false]], required: true %>

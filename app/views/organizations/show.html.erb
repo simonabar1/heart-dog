@@ -93,7 +93,7 @@
                 <% if dog.photo.attached? %>
                 <%= cl_image_tag dog.photo.key, crop: :fill, class: "card-img-top" %>
                 <% else %>
-                <%= image_tag 'missing-image.png', class: 'mg-fluid img-thumbnail mt-4 mb-2', style: 'width: 150px; z-index: 1;' %>
+                <%= image_tag 'missing-image.png', class: 'card-img-top' %>
                 <% end %>
                 <div class="card-body">
                   <h5 class="card-title text-center"> <%= dog.name %> </h5>

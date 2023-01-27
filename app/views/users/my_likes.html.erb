@@ -1,0 +1,37 @@
+
+
+
+<div style='background-color: #E8CFC1; height: 100%'>
+  <div class="container" style='padding: 2rem 0;'>
+    <div  style='padding: 2rem'>
+    <h2 class='text-center'>Here are your <span style='font-weight: bold; color: #e86048;'> Likes! </span> </h2>
+    <h5 class='text-center'> Here you'll find all the pups you saved. </h5>
+    </div>
+
+    <!-- Search Form -->
+
+
+<!-- [...] -->
+
+    <div class="row row-cols-1 row-cols-md-3">
+        <% @liked.each do |like| %>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+              <div class="card h-100">
+                <% if like.dog.photo.attached? %>
+                <%= cl_image_tag like.dog.photo.key, crop: :fill, class: "card-img-top" %>
+                <% else %>
+                <%= image_tag 'missing-image.png', class: 'card-img-top' %>
+                <% end %>
+                <div class="card-body">
+                  <h5 class="card-title text-center"> <%= like.dog.name %> </h5>
+                  <p class="card-text text-justify"> <%= like.dog.description %></p>
+                  <div class="text-center">
+                    <%= link_to "Find Out More", dog_path(like.dog), class: "btn btn-flat" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <% end %>
+    </div>
+  </div>
+</div>

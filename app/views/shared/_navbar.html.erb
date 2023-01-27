@@ -33,13 +33,13 @@
             <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
-              <%= link_to "My Pets", "#", class: "dropdown-item" %>
+              <%= link_to "My Likes", my_likes_path(current_user), class: "dropdown-item" %>
               <% if current_user.organization != nil %>
               <%= link_to "My Organization", organization_path(current_user.organization), class: "dropdown-item" %>
               <% else %>
-              <%= link_to "My Organization", new_organization_path, class: "dropdown-item" %>
+              <%= link_to "Create an Organization", new_organization_path, class: "dropdown-item" %>
               <% end %>
-              <%= link_to "My Matches", "#", class: "dropdown-item" %>
+              <%= link_to "My Preferences", "#", class: "dropdown-item" %>
               <%= link_to "Log out",  destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>

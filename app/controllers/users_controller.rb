@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
       @user = User.find(params[:id])
+
   end
 
   def edit
@@ -13,6 +14,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
     redirect_to user_path(@user)
+  end
+
+  def my_likes
+    @liked = current_user.likes
+  end
+
+  def my_preferences
   end
 
 

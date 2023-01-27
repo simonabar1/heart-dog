@@ -3,6 +3,11 @@
     <div  style='padding: 2rem'>
     <h2 class='text-center'>Welcome to our <span style='font-weight: bold; color: #e86048;'> Adoption Match</span>, <%= current_user.first_name.capitalize %>!</h2>
     <h5 class='text-center'>A tool designed to help you find your perfect Heart Dog.</h5>
+
+
+
+    <%= render "dog_card", dog: @dog %>
+
      <section class="container row row-cols-1 row-cols-md-4 text-center justify-content-center pt-4" style='margin: 6% auto;'>
             <div class="col-lg-4 col-md-12 mt-3 mb-3">
 

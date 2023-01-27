@@ -1,0 +1,26 @@
+    <div class="row row-cols-1 row-cols-md-3">
+
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="card h-100">
+                <% if @dog.photo.attached? %>
+                <%= cl_image_tag @dog.photo.key, crop: :fill, class: "card-img-top" %>
+                <% else %>
+                <%= image_tag 'missing-image.png', class: 'card-img-top' %>
+                <% end %>
+                <div class="card-body">
+                  <h5 class="card-title text-center"> <%= @dog.name %> </h5>
+                  <p class="card-text text-justify"> <%= @dog.description %></p>
+
+                  <div class="text-center">
+                    <%= link_to "Like", '#', class: "btn btn-flat" %>
+                    <%= link_to "More", dog_path(@dog), class: "btn btn-flat" %>
+                    <%= link_to "Not Like", matches_path, class: "btn btn-flat" %>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+  </div>
+
+</div>

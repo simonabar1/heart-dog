@@ -14,6 +14,7 @@ class OrganizationsController < ApplicationController
   def show
     @organization = Organization.find(params[:id])
     @owner = @organization.user
+    @available_dogs = @organization.dogs.where(adopted: false)
 
   end
 

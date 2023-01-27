@@ -79,12 +79,15 @@
 >
               <div class='d-flex justify-content-between'>
               <p class="lead fw-normal mb-1">Available Dogs </p>
-              <p><%= link_to "Add +", new_dog_path, class: "btn btn-flat", style: "margin: 0; background-color: #00b386;" %>
-              </p>
+              <% if current_user.organization == @organization %>
+                <p><%= link_to "Add +", new_dog_path, class: "btn btn-flat", style: "margin: 0; background-color: #00b386;" %> </p>
+              <% else %>
+              <div ></div>
+              <% end %>
               </div>
 
               <div class="row row-cols-1 row-cols-md-3">
-            <% @organization.dogs.each do |dog| %>
+            <% @available_dogs.each do |dog| %>
             <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
               <div class="card h-100">
                 <% if dog.photo.attached? %>

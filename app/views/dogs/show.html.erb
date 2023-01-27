@@ -30,16 +30,27 @@
           </div>
           <div class="p-4 text-black" style="background-color: #f8f9fa;">
             <div class="d-flex justify-content-end text-center py-1">
-              <div>
+              <div class='d-flex'>
+
+                <p class="mt-2 h5 align-self-center" style='padding-right: 0.5rem;'><%= @dog.likes.count %> Likes
+
               <% if user_signed_in? %>
+
               <% if @dog.liked?(current_user) %>
-              <%= button_to 'Like', like_path(@dog), method: 'put', disabled: true  %>
+              <%= button_to like_path(@dog), method: 'put', class: 'like-button', disabled: true do %>
+              <i class="liked fa-solid fa-heart" style='padding: 0.5rem; border-radius: 50%';></i>
+              <% end %>
+
               <% else %>
-              <%= button_to 'Like', like_path(@dog), method: 'put'  %>
+              <%= button_to like_path(@dog), class: 'not-liked', class: 'like-button', method: 'put' do %>
+              <i class="not-liked fa-regular fa-heart" style='padding: 0.5rem; border-radius: 50%';></i>
               <% end %>
+
               <% end %>
-                <p class="mb-1 h5" style='padding-right: 0.5rem;'><%= @dog.likes.count %> Likes
-                <i class="not-liked fa-regular fa-heart" style='padding: 0.5rem; border-radius: 50%';></i>
+
+              <% end %>
+
+
                </p>
               </div>
 

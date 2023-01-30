@@ -44,8 +44,10 @@ class DogsController < ApplicationController
     def like
       @dog = Dog.find(params[:id])
       Like.create(user_id: current_user.id, dog_id: @dog.id)
-      redirect_to dog_path(@dog)
+      redirect_back(fallback_location: root_path)
     end
+
+
 
 
     private

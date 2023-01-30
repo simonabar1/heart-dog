@@ -38,12 +38,12 @@
 
               <% if @dog.liked?(current_user) %>
               <%= button_to like_path(@dog), method: 'put', class: 'like-button', disabled: true do %>
-              <i class="liked fa-solid fa-heart" style='padding: 0.5rem; border-radius: 50%';></i>
+              <i class="liked fa-solid fa-heart like-button-show-page" style='padding: 0.5rem; border-radius: 50%';></i>
               <% end %>
 
               <% else %>
               <%= button_to like_path(@dog), class: 'not-liked', class: 'like-button', method: 'put' do %>
-              <i class="not-liked fa-regular fa-heart" style='padding: 0.5rem; border-radius: 50%';></i>
+              <i class="not-liked fa-regular fa-heart like-button-show-page" style='padding: 0.5rem; border-radius: 50%';></i>
               <% end %>
 
               <% end %>

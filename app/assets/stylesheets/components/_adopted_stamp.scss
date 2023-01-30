@@ -1,0 +1,23 @@
+.container .content {
+  position: absolute; /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  background: #e3faf4; /* Fallback color */
+  background: rgba(227, 250, 244, 0.5); /* Black background with 0.5 opacity */
+  width: 100%; /* Full width */
+  height: 100%; /* Some padding */
+
+}
+
+.adopted-text {
+  transform: rotate(-45deg);
+  border: solid 1px darkgreen;
+  border-radius: 5px;
+  font-size: 2rem;
+  color: darkgreen;
+  width: 70%;
+  text-align: center;
+  padding: 2rem 1rem;
+  position: relative;
+  margin:  auto;
+  top: 10rem;
+}

@@ -11,9 +11,16 @@
                   <h5 class="card-title text-center"> <%= @dog.name %> </h5>
                   <p class="card-text text-justify"> <%= @dog.description %></p>
 
-                  <div class="text-center">
-                    <%= link_to "Like", '#', class: "btn btn-flat" %>
-                    <%= link_to "Not Like", matches_path, class: "btn btn-flat" %>
+                  <div class="text-center d-flex justify-content-center">
+              <%= button_to like_path(@dog), class: 'like-button', style: 'margin: 1rem', method: 'put' do %>
+              <i class="match-liked fa-solid fa-check" style='padding: 0.5rem; border-radius: 50%';></i>
+              <% end %>
+              <%= button_to '#', class: 'like-button', style: 'margin: 1rem', method: 'put' do %>
+              <i class="match-contact fa-sharp fa-solid fa-envelope" style='padding: 0.55rem; border-radius: 50%';></i>
+              <% end %>
+              <%= button_to '#', class: 'like-button', style: 'margin: 1rem', method: 'put' do %>
+              <i class="match-disliked fa-sharp fa-solid fa-xmark" style='padding: 0.5rem 0.7rem; border-radius: 50%';></i>
+              <% end %>
                   </div>
                   </div>
                 </div>

@@ -2,7 +2,7 @@ class MatchesController < ApplicationController
 
   def index
     @user = current_user
-    @dogs = Dog.where(gender: true)
+    @dogs = Dog.all
     @dog = @dogs.sample
   end
 

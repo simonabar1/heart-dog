@@ -1,13 +1,46 @@
-.liked {
+.liked, .match-disliked {
   color: red;
   border: 2px solid red;
+}
+
+.match-disliked {
+  font-weight: bold;
+  background-color: #fff3f0;
+}
+.liked, .not-liked:hover {
+  cursor: pointer;
+}
+
+.not-liked {
+  color: gray;
+  border: 2px solid gray;
+}
+
+.match-liked {
+  color: green;
+  border: 2px solid green;
+  font-weight: bold;
+  background-color: #f5fff0;
+  ;
+}
+
+.match-contact {
+  color: #e86048;;
+  border: 2px solid #e86048;;
+  font-weight: bold;
+  background-color: #f7edeb;
+  ;
+}
+
+.match-liked:hover, .match-disliked:hover, .match-contact:hover  {
+  transform: scale(1.2);
 }
 
 .liked, .not-liked:hover {
   cursor: pointer;
 }
 
-.not-liked {
+.match-new {
   color: gray;
   border: 2px solid gray;
 }

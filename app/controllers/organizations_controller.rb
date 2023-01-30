@@ -5,11 +5,25 @@ class OrganizationsController < ApplicationController
     if params[:query].present?
       sql_query = "name ILIKE :query OR city ILIKE :query"
       @organizations = Organization.where(sql_query, query: "%#{params[:query]}%")
+      @markers = @organizations.geocoded.map do |organization|
+        {
+          lat: organization.latitude,
+          lng: organization.longitude,
+          info_window_html: render_to_string(partial: "info_window", locals: { organization: organization })
+        }
+      end
     else
       @organizations = Organization.all
+      @markers = @organizations.geocoded.map do |organization|
+        {
+          lat: organization.latitude,
+          lng: organization.longitude,
+          info_window_html: render_to_string(partial: "info_window", locals: { organization: organization })
+        }
+      end
     end
-
   end
+
 
   def show
     @organization = Organization.find(params[:id])

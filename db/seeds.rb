@@ -9,9 +9,11 @@
 
 puts "Droping all previous data"
 
+Like.destroy_all
 Dog.destroy_all
 Organization.destroy_all
 User.destroy_all
+
 
 puts 'Clean up complete.'
 
@@ -21,6 +23,11 @@ user_one = User.new(
   first_name: 'Eduard',
   last_name: 'Romain',
   city: 'Amsterdam',
+  birthday: '01/01/2000',
+  habitation: 'Flat',
+  marital_status: 'Single',
+  children: 2,
+  pets: 1,
   email: 'eduard@hotmail.com',
   password: '123123'
 )
@@ -30,6 +37,11 @@ user_two = User.new(
   first_name: 'Alexandros',
   last_name: 'Meisner',
   city: 'Barcelona',
+  habitation: 'Flat',
+  marital_status: 'Married',
+  children: 0,
+  pets: 0,
+  birthday: '02/02/2000',
   email: 'alexandros@hotmail.com',
   password: '123123'
 )
@@ -39,7 +51,12 @@ user_two.save!
 user_three = User.new(
   first_name: 'Aleksey',
   last_name: 'Heimisson',
+  habitation: 'Flat',
+  marital_status: 'Single',
+  children: 2,
+  pets: 1,
   city: 'London',
+  birthday: '03/03/2000',
   email: 'aleksey@hotmail.com',
   password: '123123'
 )
@@ -50,6 +67,11 @@ user_four = User.new(
   first_name: 'Mahesh',
   last_name: 'Baník',
   city: 'Paris',
+  habitation: 'House with Garden',
+  marital_status: 'Married',
+  children: 0,
+  pets: 1,
+  birthday: '04/04/2000',
   email: 'mahesh@hotmail.com',
   password: '123123'
 )
@@ -60,6 +82,11 @@ user_five = User.new(
   first_name: 'Simona',
   last_name: 'Barone',
   city: 'Rotterdam',
+  habitation: 'House with Garden',
+  marital_status: 'Single',
+  children: 0,
+  pets: 1,
+  birthday: '05/05/2000',
   email: 'simona@hotmail.com',
   password: '123123'
 )
@@ -72,7 +99,7 @@ puts "Creating 5 fake organizations..."
 
 organization_one = Organization.new(
   name: 'Puppy Rescue Team',
-  address: 'Webster By-Pass',
+  address: '789 Leidsestraat',
   city: 'Amsterdam',
   website: "www.puppyrescue.com",
   whatsapp: '010 010 020',
@@ -85,7 +112,7 @@ organization_one.save!
 
 organization_two = Organization.new(
   name: 'Spains Strays',
-  address: 'Arley Approach',
+  address: 'Carrer de la Nau 86',
   city: 'Barcelona',
   website: "www.spainstrays.com",
   whatsapp: '010 010 020',
@@ -98,7 +125,7 @@ organization_two.save!
 
 organization_three = Organization.new(
   name: 'Annas Rescues',
-  address: 'Wyton Grove',
+  address: '94 Telegraph Place',
   city: 'London',
   website: "www.annasrescues.com",
   whatsapp: '010 010 020',
@@ -111,7 +138,7 @@ organization_three.save!
 
 organization_four = Organization.new(
   name: 'Save a Life',
-  address: 'Telegraph Place',
+  address: 'Gillis van Ledenberchstraat 112',
   city: 'Amsterdam',
   website: "www.savealife.com",
   whatsapp: '010 222 020',
@@ -126,7 +153,7 @@ organization_four.save!
 
 organization_five = Organization.new(
   name: 'Paw Teams',
-  address: 'Hammersmith Road',
+  address: 'Caledonian Road 10',
   city: 'London',
   website: "www.pawteam.com",
   whatsapp: '010 010 020',

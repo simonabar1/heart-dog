@@ -19,7 +19,7 @@
         <%= text_field_tag :query,
           params[:query],
           class: "form-control rounded",
-          placeholder: "Enter a name..." %>
+          placeholder: "Enter a name or a city..." %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
@@ -28,7 +28,19 @@
    </div>
 
 
-<!-- [...] -->
+<!-- Map -->
+
+  <div class="row" style='margin: 0; padding: 0;'>
+   <div class="col text=center">
+
+    <div style="width: 100%; height: 400px; margin-bottom: 20px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      </div>
+      </div>
+
+  <!-- [...] -->
 
         <% @organizations.each do |organization| %>
             <div class="col-lg-3 col-md-4 col-sm-6 mb-3">

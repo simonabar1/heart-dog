@@ -1,0 +1,8 @@
+<h2><%= organization.name %></h2>
+<p><%= organization.address%>, <%=organization.city %></p>
+<% if organization.dogs.where(adopted:false).count == 1 %>
+<p> <strong> <%= organization.dogs.where(adopted: false).count %></strong> pet is currently up for adoption at this location.</p>
+<% else %>
+<p> <strong> <%= organization.dogs.where(adopted: false).count %></strong> pets are currently up for adoption at this location.</p>
+<% end %>
+<%= link_to 'Learn more', organization_path(organization), style: 'border: none; text-decoration: none;' %>

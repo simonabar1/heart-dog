@@ -18,7 +18,7 @@
                 <% if current_user.organization == @dog.organization %>
                 <%= link_to "Edit Profile", edit_dog_path(@dog), class: "btn btn-flat", style: "z-index: 1;" %>
                 <% else %>
-                 <%= link_to "Contact", '#', class: "btn btn-flat", style: "z-index: 1;" %>
+                 <%= link_to "Contact", organization_path(@dog.organization), class: "btn btn-flat", style: "z-index: 1;" %>
                  <% end %>
 
 

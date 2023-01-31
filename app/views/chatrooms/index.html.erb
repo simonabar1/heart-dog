@@ -1,0 +1,24 @@
+
+
+
+<div style='background-color: #E8CFC1; height: 100%; min-height: 100vh;'>
+  <div class="container" style='padding: 100px 0; width: 50%;'>
+    <div style='text-align: center; padding-bottom: 20px'>
+    <h2>Your <span style='font-weight: bold; color: #e86048;'>Messages</span></h2>
+     <% if @chatroom_users.size.zero? %>
+      <h5 class="pb-2">You do not have any conversations right now.</h5>
+    <% else %>
+      <h5 class="pb-2">You have (<%= @chatroom_users.size %>) new messages.</h5>
+      <% end %>
+    </div>
+
+   <div class="d-flex flex-column justify-content-center align-items-center ">
+  <div class="col-12">
+      <% @chatroom_users.each do |chatroom_user| %>
+        <%= render "chatroom_user", chatroom_user: chatroom_user %>
+    <% end %>
+  </div>
+</div>
+
+  </div>
+</div>

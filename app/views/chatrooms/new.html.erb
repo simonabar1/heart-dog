@@ -1,0 +1,22 @@
+
+
+<div style='background-color: #E8CFC1; height: 100%; min-height: 100vh;'>
+  <div class="container" style='padding: 100px 0; width: 50%;'>
+    <div style='text-align: center; padding-bottom: 20px'>
+    <h2 class='m-3'>Please keep in mind: our rescuers are very busy!</h2>
+    <h5> If you do not get an answer via chat, please refer to the contact section in the organization page. </h5>
+    </div>
+
+    <%= simple_form_for(@chatroom) do |f| %>
+  <div class="text-center m-4">
+    <%= f.input :name,
+      label: false,
+      placeholder: "Enter a subject...",
+      wrapper_html: {class: "flex-grow-1"}  %>
+    <%= f.submit "Send", class: "btn btn-flat mb-3" %>
+    <%= f.input :chat_user, as: :hidden, input_html: { value: params[:chat_user] } %>
+  </div>
+<% end %>
+
+  </div>
+</div>

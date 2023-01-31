@@ -16,7 +16,7 @@
                 <% if current_user == @organization.user %>
                 <%= link_to "Edit Profile", edit_organization_path(@organization), class: "btn btn-flat", style: "z-index: 1;" %>
                 <% else %>
-               <%= link_to "Donate", '#', class: "btn btn-flat", style: "z-index: 1;" %>
+               <%= link_to "Chat", new_chatroom_path(chat_user: @organization.user), class: "btn btn-flat", style: "z-index: 1;" %>
                 <% end %>
 
             </div>

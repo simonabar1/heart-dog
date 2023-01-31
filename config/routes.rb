@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :organizations
   resources :dogs
   resources :matches, only: [:index, :show, :new]
+  resources :chatrooms, only: [:index, :show, :new, :create] do
+    resources :messages, only: :create
+  end
 
   put "/dog/:id/like", to: "dogs#like", as: "like"
   get "/user/:id/my+likes", to: "users#my_likes", as: "my_likes"

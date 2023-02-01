@@ -18,7 +18,7 @@
                 <% if current_user.organization == @dog.organization %>
                 <%= link_to "Edit Profile", edit_dog_path(@dog), class: "btn btn-flat", style: "z-index: 1;" %>
                 <% else %>
-                 <%= link_to "Contact", organization_path(@dog.organization), class: "btn btn-flat", style: "z-index: 1;" %>
+                <button type="button" class="btn btn-flat" data-bs-toggle="modal" data-bs-target="#contactModal" class='btn btn-flat', style='z-index:1'> Contact</button>
                  <% end %>
 
 
@@ -115,7 +115,10 @@
                 <p class="font-italic mb-1"><%= @dog.organization.description  %></p>
               </div>
               <div class="text-center" style='padding-top: 2em';>
-                            <%= link_to "Get in Touch", '#', class: "btn btn-flat", style: "z-index: 1;" %> <%= link_to 'Go Back', :back , class: "btn btn-flat" %>
+              <button type="button" class="btn btn-flat" data-bs-toggle="modal" data-bs-target="#contactModal"> Contact</button>
+                  <%= render "contact", dog: @dog %>
+
+                            <%= link_to 'Go Back', :back , class: "btn btn-flat", style: 'margin: 5px' %>
               </div>
             </div>
 

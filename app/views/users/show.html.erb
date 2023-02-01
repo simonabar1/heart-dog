@@ -11,11 +11,11 @@
               <% if @user.photo.attached?  %>
               <%= cl_image_tag @user.photo.key, height: 150, style: 'z-index: 1',  crop: :fill,  class: "img-fluid img-thumbnail mt-4 mb-2" %>
             <% else %>
-              <%= image_tag 'missing-image.png', class: 'mg-fluid img-thumbnail mt-4 mb-2', style: 'width: 150px; z-index: 1;' %>
+              <%= image_tag 'user-placeholder.png', class: 'mg-fluid img-thumbnail mt-4 mb-2', style: 'width: 150px; z-index: 1;' %>
             <% end %>
 
                 <% if @user == current_user %>
-                <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-flat", style: "z-index: 1;" %>
+                <%= link_to "Edit", edit_user_registration_path, class: "btn btn-flat", style: "z-index: 1;" %>
                 <% else %>
                <%= link_to "Message", '#', class: "btn btn-flat", style: "z-index: 1;" %>
                 <% end  %>
@@ -23,7 +23,7 @@
 
 
             </div>
-            <div class="ms-3" style="margin-top: 130px;">
+            <div class="ms-3 " style="margin-top: 130px;">
               <h5 style='color: white; font-weight: bold;';><%= @user.first_name%> <%=@user.last_name %></h5>
               <p><%= @user.city %> </p>
             </div>
@@ -36,15 +36,7 @@
               </div>
 
               <div class="px-3">
-                <p class="mb-1 h5"><%=@user.children  %></p>
-                <p class="small text-muted mb-0">
-                 <% if @user.children == 1 %>
-                 Child
-                <% else %>
-                 Children
-                <% end %>
-                </p>
-              </div>
+
               <div>
                  <p class="mb-1 h5"><%=@user.pets  %></p>
                 <p class="small text-muted mb-0">

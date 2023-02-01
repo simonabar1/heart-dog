@@ -14,7 +14,7 @@
                 <%= image_tag 'missing-image.png', class: 'mg-fluid img-thumbnail mt-4 mb-2', style: 'width: 150px; z-index: 1;' %>
                 <% end %>
                 <% if current_user == @organization.user %>
-                <%= link_to "Edit Profile", edit_organization_path(@organization), class: "btn btn-flat", style: "z-index: 1;" %>
+                <%= link_to "Edit", edit_organization_path(@organization), class: "btn btn-flat", style: "z-index: 1;" %>
                 <% else %>
                <%= link_to "Chat", new_chatroom_path(chat_user: @organization.user), class: "btn btn-flat", style: "z-index: 1;" %>
                 <% end %>
@@ -32,12 +32,11 @@
                 <p class="small text-muted mb-0">Dogs</p>
               </div>
               <div class="px-3">
-                <p class="mb-1 h5"><%= @organization.dogs.where(adopted: "true").count %></p>
-                <p class="small text-muted mb-0">Adoptions</p>
+
               </div>
               <div>
-                <p class="mb-1 h5">4</p>
-                <p class="small text-muted mb-0">Donations</p>
+                  <p class="mb-1 h5"><%= @organization.dogs.where(adopted: "true").count %></p>
+                <p class="small text-muted mb-0">Adoptions</p>
               </div>
             </div>
           </div>

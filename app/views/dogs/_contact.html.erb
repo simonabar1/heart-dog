@@ -1,0 +1,50 @@
+<!-- Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="contactModalLabel">Get in Touch</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+
+
+          <div class="mb-5">
+          <p>Here's where you will find <%=@dog.name.capitalize %>: </p>
+              <p class="lead fw-normal" style='font-weight:bold'><%=@dog.organization.name %></p>
+              <p><%=@dog.organization.address%>, <%=@dog.organization.city %></p>
+
+
+              <div class="p-4">
+              <ul class="list-group w-100 mx-auto">
+                <div class="list-group-item">
+                <span class="d-inline-flex align-items-center justify-content-center text-white rounded m-1 me-2" style="background-color: #0082ca; width: 40px; height: 40px;">
+                  <i class="fab fa-whatsapp fa-lg"></i>
+                </span>
+                <%= @dog.organization.whatsapp %>
+              </div>
+              <div class="list-group-item">
+                <div class="d-inline-flex align-items-center justify-content-center text-white rounded m-1 me-2" style="background-color: #ff4500; width: 40px; height: 40px;">
+                  <i class="fas fa-envelope fa-lg"></i>
+                </div>
+                <%= @dog.organization.email %>
+              </div>
+              <div class="list-group-item">
+                <div class="d-inline-flex align-items-center justify-content-center text-white rounded m-1 me-2" style="background-color: #00b386; width: 40px; height: 40px;">
+                  <i class="fas fa-laptop fa-lg"></i>
+                </div>
+                <%= @dog.organization.website %>
+              </div>
+            </ul>
+              </div>
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-flat" data-bs-dismiss="modal">Thank you!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>

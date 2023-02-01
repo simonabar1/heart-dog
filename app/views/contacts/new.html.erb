@@ -1,10 +1,10 @@
-<div class="px-8 py-6 rounded-md shadow bg-white">
-    <h1 class="text-4xl text-center">Contact Railscoder</h1>
-    <hr>
-    <p>I'd love to hear from you. Send me a message below.</p>
-
-
-<div class="container">
+<div style='background-color: #E8CFC1; height: 100%; min-height: 100vh;'>
+  <div class="container" style='padding: 100px 0; width: 50%;'>
+    <div style='text-align: center; padding-bottom: 20px'>
+    <h2>Membership <span style='font-weight: bold; color: #e86048;'> Information</span></h2>
+    <h5> Get in touch today to upgrade your HeartDog membership!</h5>
+    </div>
+    <div class="">
 <%= simple_form_for(@contact) do |f| %>
   <%= f.input :name %>
   <%= f.input :email,
@@ -15,10 +15,13 @@
                 as: :hidden,
                 class: 'hidden' %>
 
-  <%= f.input :message, required: true %>
+  <%= f.input :message, as: :text, required: true %>
    <div class="form-actions" style='text-align: center'>
     <%= f.button :submit, "Submit", class: 'btn btn-flat' %>
   </div>
 
 <% end %>
+</div>
+
+  </div>
 </div>

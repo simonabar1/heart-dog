@@ -1,0 +1,23 @@
+    <div class="row">
+
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-3" style='margin: auto'>
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title text-center"> Too bad! </h5>
+                    <%= image_tag 'missing-image.png', class: 'card-img-top' %>
+                  <p class="text-justify"> No dogs are matching your preferences.
+                  Edit your preferences or browse all the available dogs to find your perfect match! </p>
+
+                  <div class="text-center d-flex justify-content-center">
+
+              <%= link_to 'Browse Dogs', dogs_path, class: 'btn btn-flat', style: 'margin: 2px' %>
+              <%= link_to 'Edit Preferences', dogs_path, class: 'btn btn-flat', style: 'margin: 2px' %>
+
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+
+</div>

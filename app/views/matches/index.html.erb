@@ -38,8 +38,11 @@
         </div>
       </div>
     </div>
-
+    <% if @new_dogs.empty? %>
+    <%= render "empty_card" %>
+    <% else %>
     <%= render "dog_card", dog: @dog %>
+    <% end %>
 
 
     </div>

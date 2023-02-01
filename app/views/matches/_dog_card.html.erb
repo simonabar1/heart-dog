@@ -18,7 +18,7 @@
               <%= button_to '#', class: 'like-button', style: 'margin: 1rem', method: 'put' do %>
               <i class="match-contact fa-sharp fa-solid fa-envelope" style='padding: 0.55rem; border-radius: 50%';></i>
               <% end %>
-              <%= button_to '#', class: 'like-button', style: 'margin: 1rem', method: 'put' do %>
+              <%= button_to dislike_path(@dog), class: 'like-button', style: 'margin: 1rem', method: 'put' do %>
               <i class="match-disliked fa-sharp fa-solid fa-xmark" style='padding: 0.5rem 0.7rem; border-radius: 50%';></i>
               <% end %>
                   </div>

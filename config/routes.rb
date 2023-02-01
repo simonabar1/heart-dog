@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/contacts', to: 'contacts#new', as: 'contact'
   get 'contacts/sent'
   put "/dog/:id/like", to: "dogs#like", as: "like"
+  put "/dog/:id/dislike", to: "dogs#dislike", as: "dislike"
   get "/user/:id/my+likes", to: "users#my_likes", as: "my_likes"
   get "/user/:id/my+preferences", to: "users#my_preferences", as: "my_preferences"
 

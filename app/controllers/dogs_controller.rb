@@ -47,9 +47,12 @@ class DogsController < ApplicationController
       redirect_back(fallback_location: root_path)
     end
 
-    def liked?(user)
-      !!self.likes.find{|like| like.user_id == user.id }
+    def dislike
+      @dog = Dog.find(params[:id])
+      Dislike.create(user_id: current_user.id, dog_id: @dog.id)
+      redirect_back(fallback_location: root_path)
     end
+
 
 
     private

@@ -47,7 +47,9 @@ class DogsController < ApplicationController
       redirect_back(fallback_location: root_path)
     end
 
-
+    def liked?(user)
+      !!self.likes.find{|like| like.user_id == user.id }
+    end
 
 
     private

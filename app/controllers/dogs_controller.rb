@@ -53,7 +53,17 @@ class DogsController < ApplicationController
       redirect_back(fallback_location: root_path)
     end
 
-
+    def age_category
+      @age = Date.today.year - Dog.find(params[:id]).birthday.year
+      if @age <= 1
+       age_category == 'Puppy'
+      elsif @age > 1 && @age < 7
+       age_category == 'Adult'
+      else
+       age_category == 'Senior'
+      end
+      return age_category
+    end
 
     private
 

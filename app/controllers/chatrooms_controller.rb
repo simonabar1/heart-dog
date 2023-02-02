@@ -31,11 +31,6 @@ class ChatroomsController < ApplicationController
     @chatroom_user_receiver.save!
   end
 
-  def destroy
-    @chatroom = Chatroom.find(params[:id])
-    @chatroom.users = [current_user, User.find(params[:chat_user])]
-    @chatroom.destroy
-  end
 
   private
 

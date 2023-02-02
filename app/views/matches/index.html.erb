@@ -9,7 +9,14 @@
 <button type="button" class="btn btn-flat" data-bs-toggle="modal" data-bs-target="#exampleModal">
   How does it work?
 </button>
-<button class='btn btn-flat'>Edit my Preferences</button>
+<% if current_user.user_preference.nil? %>
+<%= link_to 'Set my Preferences', new_user_user_preference_path(current_user), class: 'btn btn-flat' %>
+<% else %>
+<%= link_to 'Edit my Preferences', edit_user_user_preference_path(current_user, current_user.user_preference), class: 'btn btn-flat' %>
+<% end %>
+
+
+
 </div>
 
 <!-- Modal -->

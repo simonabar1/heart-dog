@@ -8,6 +8,9 @@ class MatchesController < ApplicationController
       if dog.liked?(current_user) == false && dog.disliked?(current_user) == false
         @new_dogs.push(dog)
       end
+      unless dog.gender == @user.user_preference.gender || @user.user_preference.gender == nil
+        @new_dogs.delete(dog)
+      end
       @dog = @new_dogs.sample
   end
 end

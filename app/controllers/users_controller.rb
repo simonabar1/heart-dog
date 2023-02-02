@@ -20,8 +20,6 @@ class UsersController < ApplicationController
     @liked = current_user.likes
   end
 
-  def my_preferences
-  end
 
 
   private

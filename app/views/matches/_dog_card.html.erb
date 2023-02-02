@@ -1,11 +1,14 @@
     <div class="row">
 
+
             <div class="col-lg-4 col-md-6 col-sm-6 mb-3" style='margin: auto'>
               <div class="card h-100">
+              <%= link_to dog_path(@dog) do %>
                 <% if @dog.photo.attached? %>
                 <%= cl_image_tag @dog.photo.key, crop: :fill, class: "card-img-top" %>
                 <% else %>
                 <%= image_tag 'missing-image.png', class: 'card-img-top' %>
+                <% end %>
                 <% end %>
                 <div class="card-body">
                   <h5 class="card-title text-center"> <%= @dog.name %> </h5>

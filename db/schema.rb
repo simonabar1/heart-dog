@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_02_152523) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_13_180020) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -81,6 +81,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_02_152523) do
     t.date "birthday"
     t.boolean "estimated"
     t.string "personality"
+    t.string "age_category"
     t.index ["organization_id"], name: "index_dogs_on_organization_id"
   end
 
@@ -129,10 +130,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_02_152523) do
   end
 
   create_table "user_preferences", force: :cascade do |t|
-    t.boolean "gender"
-    t.string "age_category"
-    t.string "vaccinated"
-    t.boolean "neutered"
+    t.boolean "gender", default: true
+    t.string "age_category", default: "No Preference"
+    t.string "vaccinated", default: "No Preference"
+    t.boolean "neutered", default: true
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

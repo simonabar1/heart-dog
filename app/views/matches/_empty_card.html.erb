@@ -11,7 +11,7 @@
                   <div class="text-center d-flex justify-content-center">
 
               <%= link_to 'Browse Dogs', dogs_path, class: 'btn btn-flat', style: 'margin: 2px' %>
-              <%= link_to 'Edit Preferences', dogs_path, class: 'btn btn-flat', style: 'margin: 2px' %>
+              <%= link_to 'Edit Preferences', edit_user_user_preference_path(current_user, current_user.user_preference), class: 'btn btn-flat', style: 'margin: 2px' %>
 
                   </div>
                   </div>

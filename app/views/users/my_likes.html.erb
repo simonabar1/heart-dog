@@ -14,6 +14,19 @@
 <!-- [...] -->
 
     <div class="row row-cols-1 row-cols-md-3">
+
+    <% if @liked.empty? %>
+              <div class="col-lg-3 col-md-4 col-sm-6 mb-3" style='margin: auto;'>
+              <div class="text-center" style='padding: 30px;'>
+              <h5> Wait... there's nothing here! </h5>
+                <%= image_tag 'nothing.svg', style: 'height: 200px; padding: 30px;', class: 'card-img-top' %>
+                  <p class="" style='padding: 30px;'>  Why don't you go make some friends?</p>
+              <%= link_to 'Browse Dogs', dogs_path, class: 'btn btn-flat', style: 'margin: 2px' %>
+
+
+              </div>
+            </div>
+    <% else %>
         <% @liked.each do |like| %>
             <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
               <div class="card h-100">
@@ -32,6 +45,7 @@
               </div>
             </div>
         <% end %>
+      <% end %>
     </div>
   </div>
 </div>

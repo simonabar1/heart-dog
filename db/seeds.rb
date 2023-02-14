@@ -62,6 +62,15 @@ file_dog_23 = URI.open("https://source.unsplash.com/JgKfmp9uq9w/300x300")
 file_dog_24 = URI.open("https://source.unsplash.com/FbG7KdgPSjs/300x300")
 file_dog_25 = URI.open("https://source.unsplash.com/qGkVJ7Tx36s/300x300")
 
+file_dog_26 = URI.open("https://source.unsplash.com/Xy7SLX9zuVM/300x300")
+file_dog_27 = URI.open("https://source.unsplash.com/FnMh0z-IeBY/300x300")
+file_dog_28 = URI.open("https://source.unsplash.com/JgKfmp9uq9w/300x300")
+file_dog_29 = URI.open("https://source.unsplash.com/plun-i022rk/300x300")
+
+file_dog_30 = URI.open("https://source.unsplash.com/fk4tiMlDFF0/300x300")
+file_dog_31 = URI.open("https://source.unsplash.com/zr0beNrnvgQ/300x300")
+file_dog_32 = URI.open("https://source.unsplash.com/M-svG1XYiHs/300x300")
+
 
 
 # Uploading organization photos
@@ -569,6 +578,141 @@ dog_eleven = Dog.new(
 
 dog_eleven.photo.attach(io: file_dog_11, filename: "d11.png", content_type: "image/png")
 dog_eleven.save!
+
+dog_twelve = Dog.new(
+  name: 'Baxter',
+  gender: 'false',
+  birthday: "03/05/2020",
+  neutered: true,
+  vaccinated: 'Not vaccinated',
+  description: 'Baxter, a 2 year old, 65 lb. mix who has just arrived.
+                We are still getting to know him and will update once we have more information.',
+  organization_id: 1
+)
+
+dog_twelve.photo.attach(io: file_dog_12, filename: "d12.png", content_type: "image/png")
+dog_twelve.save!
+
+dog_thirteen = Dog.new(
+  name: 'Boots',
+  gender: 'false',
+  birthday: "03/12/2018",
+  neutered: true,
+  vaccinated: 'Vaccinated',
+  description: 'Boots is a 4 year old, 58 lb mix. that loves to be outside! He has a great nose, and loves to explore by smelling new things in new places. He is house trained and leash trained, and is great with other dogs and children. Boots is still a puppy at heart, and needs lots of play and time running outside. He also loves toys and inside play with his humans, and long naps in his crate (his favorite place). Boots is a great dog and would be a great addition to any family.  ',
+  organization_id: 1,
+  adopted: true
+)
+
+dog_thirteen.photo.attach(io: file_dog_13, filename: "d13.png", content_type: "image/png")
+dog_thirteen.save!
+
+dog_fourteen = Dog.new(
+  name: 'Brownie',
+  gender: 'false',
+  birthday: "03/12/2018",
+  neutered: true,
+  vaccinated: 'Vaccinated',
+  description: "Brownie is a 2 year, 51 lb Labrador Retriever mix. He is shy and unsure of what's going on around him.
+                He is a very sweet boy who is looking for a forever place to sleep and a family to love and help bring him out of his shell.
+                He is new, we will update with more as we get to know him better.",
+  organization_id: 1,
+)
+
+dog_fourteen.photo.attach(io: file_dog_14, filename: "d14.png", content_type: "image/png")
+dog_fourteen.save!
+
+dog_fifteen = Dog.new(
+  name: 'Chevy',
+  gender: 'false',
+  birthday: "03/10/2022",
+  neutered: true,
+  vaccinated: 'Vaccinated',
+  description: "Chevy is a 6 month old male German shorthaired pointer mix puppy. He loves other dogs, is very smart and treat motivated, and loves to relax on his human's lap.
+              He arrived with his brother Ford; they would love to be adopted together but may be adopted separately.",
+  organization_id: 2
+)
+
+dog_fifteen.photo.attach(io: file_dog_15, filename: "d15.png", content_type: "image/png")
+dog_fifteen.save!
+
+dog_sixteen = Dog.new(
+  name: 'Ford',
+  gender: 'false',
+  birthday: "03/10/2022",
+  neutered: true,
+  vaccinated: 'Vaccinated',
+  description: "Ford is a 6 month old male German shorthaired pointer mix puppy. He loves other dogs, is very smart and treat motivated, and loves to relax on his human's lap.
+              He arrived with his brother Chevy; they would love to be adopted together but may be adopted separately.",
+  organization_id: 2
+)
+
+dog_sixteen.photo.attach(io: file_dog_16, filename: "d16.png", content_type: "image/png")
+dog_sixteen.save!
+
+dog_seventeen = Dog.new(
+  name: 'Geneva',
+  gender: 'true',
+  birthday: "03/10/2017",
+  neutered: true,
+  vaccinated: 'Vaccinated',
+  description: "Geneva is a 5 year old, 65lb mix.
+  She has overcome much to get where she is and is ready for a forever home!
+  She's a cuddle bug who loves to crawl into bed with you and play around with other dogs like she's a puppy.
+  She does get the zoomies at home but some ball throws or a Himalayan cheese stick and she starts to settle down.
+  She is good with kids but not with cats as all she wants to do is chase them and play which can be a difficult situation for them.
+    She does need some work on command training but she is a quick learner! ",
+  organization_id: 2,
+  adopted: true
+)
+
+dog_seventeen.photo.attach(io: file_dog_17, filename: "d17.png", content_type: "image/png")
+dog_seventeen.save!
+
+dog_eighteen = Dog.new(
+  name: 'Julie',
+  gender: 'true',
+  birthday: "03/02/2020",
+  neutered: true,
+  vaccinated: 'Vaccinated',
+  description: "Julie is a 1 year mix. She is a very sweet girl who loves to get (and give) kisses and cuddles. She is very energetic and loves her chew toys. She also loves a peanut butter and treat stuffed Kong to chew on. She is very food motivated for training. She would do best in a very active home with people that are willing to give her the time and exercise she needs and deserves.
+  Please note that Julie cannot go to a home with cats.
+  Julie is in training and is a very smart girl who has caught on very quickly! The lucky adopters who snag this gorgeous girl up will receive a few complimentary training sessions to transition her to her new home.",
+  organization_id: 3,
+  adopted: true
+)
+
+dog_eighteen.photo.attach(io: file_dog_18, filename: "d18.png", content_type: "image/png")
+dog_eighteen.save!
+
+
+dog_nineteen = Dog.new(
+  name: 'Ken',
+  gender: 'false',
+  birthday: "05/09/2018",
+  neutered: true,
+  vaccinated: 'Vaccinated',
+  description: "Ken is a 4 year old 50 lb mix. Look at his face! Wouldn't you like to meet him?
+  He is new and we will update his profile with more information as we get to know him.",
+  organization_id: 3
+)
+
+dog_nineteen.photo.attach(io: file_dog_19, filename: "d19.png", content_type: "image/png")
+dog_nineteen.save!
+
+dog_twenty = Dog.new(
+  name: 'Oliver',
+  gender: 'false',
+  birthday: "01/01/2022",
+  estimated: true,
+  neutered: true,
+  vaccinated: 'Vaccinated',
+  description: "Meet Oliver but his friends like to call him Ollie. He’s 1-2 year old. Ollie was found as a stray and will make a great new friend! He is shy at first but warms up quickly. He loves to cuddle in your lap.. He is currently living with his foster family’s small dogs and enjoys playing with them. He is nervous walking on a leash, so probably would not be a great fit for apartment living. Ollie is young, fun-loving, and can be puppyish.  He would bring joy to any home!",
+  organization_id: 4
+)
+
+dog_twenty.photo.attach(io: file_dog_20, filename: "d20.png", content_type: "image/png")
+dog_twenty.save!
 
 
 

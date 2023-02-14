@@ -714,7 +714,35 @@ dog_twenty = Dog.new(
 dog_twenty.photo.attach(io: file_dog_20, filename: "d20.png", content_type: "image/png")
 dog_twenty.save!
 
+dog_twentyone = Dog.new(
+  name: 'Sunny',
+  gender: 'true',
+  birthday: "01/01/2015",
+  estimated: true,
+  neutered: true,
+  vaccinated: 'Vaccinated',
+  description: "Meet Sunny, a sweet 6.5 year old girl. She has just arrived; we will update once we have more information about her.",
+  organization_id: 5
+)
 
+dog_twentyone.photo.attach(io: file_dog_21, filename: "d21.png", content_type: "image/png")
+dog_twentyone.save!
+
+dog_twentytwo = Dog.new(
+  name: 'Tali',
+  gender: 'true',
+  birthday: "12/12/2021",
+  estimated: true,
+  neutered: true,
+  vaccinated: 'Vaccinated',
+  description: "Tali, a 1.5 year old mix, was living with people who had a baby and could no longer take care of her. They just put her outside to run around freely with no supervision. Luckily she was never hit by a car or stolen. Her former people were attempting to give her away but they agreed to give her to a responsible shelter to care for her and try to find her a good forever home.
+
+  Tali is a sweet girl who loves her walks. When she gets excited, she sort of skips, which is so cute. Tali can’t wait to find a loving home with people who will care for her the way she deserves!",
+  organization_id: 4
+)
+
+dog_twentytwo.photo.attach(io: file_dog_22, filename: "d22.png", content_type: "image/png")
+dog_twentytwo.save!
 
 
 puts 'All done!'

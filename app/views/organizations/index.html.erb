@@ -44,7 +44,7 @@
 
         <% @organizations.each do |organization| %>
             <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-              <div class="card h-100">
+              <div class="card h-100 ">
                <% if organization.photo.attached? %>
                 <%= cl_image_tag organization.photo.key, crop: :fill, class: "card-img-top" %>
                 <% else %>
@@ -52,7 +52,7 @@
                 <% end %>
                 <div class="card-body">
                   <h5 class="card-title text-center"> <%= organization.name %> </h5>
-                  <p class="card-text text-justify"> <%= organization.description %></p>
+                  <p class="card-text text-justify text-truncate"> <%= organization.description %></p>
                   <div class="text-center">
                     <%= link_to "Find Out More", organization_path(organization), class: "btn btn-flat" %>
                   </div>
